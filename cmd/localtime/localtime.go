@@ -39,9 +39,7 @@ func main() {
 
 	loc, err := time.LoadLocation(*tz)
 	if err != nil {
-		fmt.Fprintf(
-			os.Stderr, "failed to load tz data: %v\n", err,
-		)
+		fmt.Fprintf(os.Stderr, "failed to load tz data: %v\n", err)
 		return
 	}
 
