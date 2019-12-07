@@ -1,0 +1,28 @@
+* durl
+Decode URL encoding ([[https://en.wikipedia.org/wiki/Percent-encoding][percent-encoding]]).
+
+* geo
+Get latitude and longitude via IP geolocation ([[https://ip-api.com/]]).
+
+*NB:* Currently does not use ~HTTPS~.
+
+* localtime
+Get current localtime, with timezone optionally determined with IP geolocation ([[https://ip-api.com/]]).
+
+*NB:* Currently does not use ~HTTPS~.
+
+* mkdir-ymd
+Create /YYYYMM/ and /YYYYMMDD/ directories.
+
+* noip
+Update a [[https://www.noip.com/][noip]] DDNS domain's IP.
+
+* worldtime
+Display world times.
+
+#+begin_src text
+NYC      20191207 341/365 49/52 6/7 103753 -0500 EST
+Napoli   20191207 341/365 49/52 6/7 163753 +0100 CET
+Shanghai 20191207 341/365 49/52 6/7 233753 +0800 CST
+UTC      20191207 341/365 49/52 6/7 153753 +0000 UTC
+#+end_src
