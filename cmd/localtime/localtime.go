@@ -20,7 +20,7 @@ const (
 
 var (
 	format = flag.String(
-		"format", "15:04", "time layout format, in Go's time format style",
+		"format", "1504", "time layout format, in Go's time format style",
 	)
 	tz = flag.String("tz", "", "timezone in tz data format")
 )
