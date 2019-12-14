@@ -1,6 +1,13 @@
 * durl
 Decode URL encoding ([[https://en.wikipedia.org/wiki/Percent-encoding][percent-encoding]]).
 
+* email
+CLI wrapper for AWS SES.
+
+Expects:
+- SES to be set up for the sender's domain.
+- AWS credentials to be available on host.
+
 * geo
 Get latitude and longitude via IP geolocation ([[https://ip-api.com/]]).
 
