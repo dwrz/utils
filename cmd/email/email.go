@@ -72,7 +72,7 @@ func main() {
 			Data:    bodyHTML,
 		}
 	}
-	if *bodyText != "" {
+	if *bodyText != "" || (*bodyText == "" && *bodyHTML == "") {
 		email.Message.Body.Text = &ses.Content{
 			Charset: charset,
 			Data:    bodyText,
