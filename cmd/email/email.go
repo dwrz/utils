@@ -16,10 +16,10 @@ var (
 	bodyText  = flag.String("body-text", "", "email text body")
 	charset   = flag.String("charset", "UTF-8", "email charset")
 	// NB: Sender must be verified in AWS SES.
-	from    = flag.String("from", "", "email from (required)")
+	from    = flag.String("from", "", "email sender (required)")
 	subject = flag.String("subject", "", "email subject")
 	// NB: Recipient may need to be verified in AWS SES.
-	to = flag.String("to", "", "email to (required)")
+	to = flag.String("to", "", "email recipient(s) (required)")
 )
 
 func main() {
