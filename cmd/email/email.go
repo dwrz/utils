@@ -39,7 +39,9 @@ func main() {
 	// E.g., shared credential files or environment variables.
 	sess, err := session.NewSession(&aws.Config{Region: awsregion})
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "failed to create AWS session: %v", err)
+		fmt.Fprintf(
+			os.Stderr, "failed to create AWS session: %v\n", err,
+		)
 		return
 	}
 
@@ -81,7 +83,7 @@ func main() {
 
 	result, err := svc.SendEmail(email)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "failed to send email: %v", err)
+		fmt.Fprintf(os.Stderr, "failed to send email: %v\n", err)
 		return
 	}
 
