@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -48,7 +49,13 @@ func main() {
 	email := &ses.SendEmailInput{
 		Destination: &ses.Destination{
 			CcAddresses: []*string{},
-			ToAddresses: []*string{to},
+			ToAddresses: func() (recipients []*string) {
+				for _, s := range strings.Split(*to, " ") {
+					copy := s
+					recipients = append(recipients, &copy)
+				}
+				return
+			}(),
 		},
 		Message: &ses.Message{
 			Body: &ses.Body{},
