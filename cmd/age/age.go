@@ -85,7 +85,8 @@ func main() {
 	ageInCalendarYears := now.Year() - birthday.Year()
 	birthdayPassed := func() bool {
 		switch {
-		case now.Month() > birthday.Month(),
+		case ageInCalendarYears > 0 &&
+			(now.Month() > birthday.Month()),
 			now.Month() == birthday.Month() &&
 				now.Day() >= birthday.Day():
 			return true
@@ -107,18 +108,22 @@ func main() {
 		yearsInMonths := (ageInCalendarYears * 12)
 		ageInCalendarMonths := int(now.Month() - birthday.Month())
 		switch {
-		case birthdayPassed && now.Day() > birthday.Day():
+		case birthdayPassed && now.Day() >= birthday.Day():
 			fmt.Println(yearsInMonths + ageInCalendarMonths)
-			return
 		case birthdayPassed && now.Day() < birthday.Day():
 			fmt.Println(yearsInMonths + ageInCalendarMonths - 1)
-			return
-		case !birthdayPassed && now.Day() > birthday.Day():
+		case !birthdayPassed && now.Day() >= birthday.Day():
+			if ageInCalendarYears == 0 {
+				fmt.Println(ageInCalendarMonths)
+				return
+			}
 			fmt.Println(yearsInMonths - ageInCalendarMonths)
-			return
 		case !birthdayPassed && now.Day() < birthday.Day():
+			if ageInCalendarYears == 0 {
+				fmt.Println(ageInCalendarMonths - 1)
+				return
+			}
 			fmt.Println(yearsInMonths - ageInCalendarMonths - 1)
-			return
 		}
 
 	case "weeks":
