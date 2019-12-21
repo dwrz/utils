@@ -1,3 +1,8 @@
+* age
+Get approximate age in years, months, weeks, days, and seconds.
+
+*NB:* logic is currently untested, there may be improperly handled edge cases.
+
 * durl
 Decode URL encoding ([[https://en.wikipedia.org/wiki/Percent-encoding][percent-encoding]]).
 
