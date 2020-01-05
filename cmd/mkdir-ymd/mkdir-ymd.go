@@ -60,7 +60,7 @@ func mkdirYMD(year, month int) {
 	).AddDate(0, 1, 0).Add(-time.Nanosecond).Day()
 
 	for d := 1; d <= lastDayOfMonth; d++ {
-		name := fmt.Sprintf("%d%d%02d", year, month, d)
+		name := fmt.Sprintf("%d%02d%02d", year, month, d)
 		if err := os.Mkdir(name, 0777); err != nil {
 			fmt.Fprintf(os.Stderr, "%v\n", err)
 		}
